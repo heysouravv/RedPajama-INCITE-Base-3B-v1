@@ -1,14 +1,13 @@
-# My Potassium App
-This is a Potassium HTTP server, created with `banana init` CLI
+# RedPajama-INCITE-Base-3B
+RedPajama-INCITE-Base-3B-v1 is an AI model designed by Together and leaders from the open-source community including *Ontocord.ai, ETH DS3Lab, AAI CERC, Université de Montréal, MILA - Québec AI Institute, Stanford Center for Research on Foundation Models (CRFM), Stanford Hazy Research research group and LAION*. The model was trained on 3,072 V100 GPUs provided as part of the INCITE 2023 project on Scalable Foundation Models for Transferrable Generalist AI, granted to MILA, LAION, and EleutherAI in fall 2022. The Oak Ridge Leadership Computing Facility (OLCF) and INCITE program provided support for the project.
 
 ### Testing
-Start a local dev server with `banana dev`
+Model Details
+- Developed by: Together Computer.
+- Model type: Language Model
+- Language(s): English
+- License: Apache 2.0
+- Model Description: A 2.8B parameter pretrained language model.
 
-### Deployment
-1. Create empty repo on [Github](https://github.com)
-2. Push this repo to github
-```
-git remote add origin https://github.com/{username}/{repo-name}.git
-```
-3. [Log into Banana](https://app.banana.dev/onboard)
-4. Select this repo to build and deploy!
+### Limitations
+**RedPajama-INCITE-Base-3B**, like other language models, has limitations that should be taken into consideration. For example, the model may not always provide accurate or relevant answers, particularly for questions that are complex, ambiguous, or outside of its training data. We therefore welcome contributions from individuals and organizations, and encourage collaboration towards creating a more robust and inclusive chatbot.
