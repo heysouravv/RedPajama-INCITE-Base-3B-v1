@@ -1,0 +1,19 @@
+{
+    "name": "RedPajama INCITE-Base-3B",
+    "category": "Natural Language",
+    "example_input": {
+        "prompt": "A long text to summarize.",
+        "max_new_tokens": 128,
+        "do_sample": "True",
+        "temperature": 0.7,
+        "top_p": 0.7,
+        "top_k": 50,
+        "return_dict_in_generate": "True"
+      },
+    "example_output": {"id": "9d749c35-d8c1-4db1-9984-7422954e0983"
+                  , "message": "success"
+                  , "created": 1683546611
+                  , "apiVersion": "January 11, 2023", 
+                  "modelOutputs": ["\nThe main purpose of this text is to introduce the reader to the field of digital humanities. The goal is to introduce the reader to the digital humanities and to show that the digital humanities is a field that can be studied by anyone. The text is divided into four sections. The first section introduces the field of digital humanities and its history. The second section introduces the main digital humanities tools and the third section introduces the main digital humanities projects. The fourth section introduces the main digital humanities scholars and their main works.\nThe digital humanities is a field that is still in its infancy. It is a field"]},
+    "version": "1"
+  }

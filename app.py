@@ -9,7 +9,8 @@ def init():
     global tokenizer
 
     tokenizer = AutoTokenizer.from_pretrained("togethercomputer/RedPajama-INCITE-Base-3B-v1")
-    model = AutoModelForCausalLM.from_pretrained("togethercomputer/RedPajama-INCITE-Base-3B-v1",torch_dtype=torch.float16).to("cuda")
+    model = AutoModelForCausalLM.from_pretrained("togethercomputer/RedPajama-INCITE-Base-3B-v1",torch_dtype=torch.float16)
+    model = model.to('cuda:0')
 
 # Inference is ran for every server call
 # Reference your preloaded global model variable here.
@@ -27,7 +28,7 @@ def inference(model_inputs:dict) -> dict:
         return {'message': "Insufficient arguments"}
     
     # Run the model
-    inputs = tokenizer(prompt, return_tensors='pt').to("cuda")
+    inputs = tokenizer(prompt, return_tensors='pt').to(model.device)
     input_length = inputs.input_ids.shape[1]
     outputs = model.generate(
         **inputs, max_new_tokens=max_new_tokens, do_sample=do_sample, temperature=temperature, top_p=top_p, top_k=top_k, return_dict_in_generate=True,
