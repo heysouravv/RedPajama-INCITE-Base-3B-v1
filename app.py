@@ -23,7 +23,8 @@ def inference(model_inputs:dict) -> dict:
     temperature = model_inputs.get("temperature", None)
     top_k = model_inputs.get("top_k", None)
     top_p = model_inputs.get("top_p", None)
-    do_sample = model_inputs.get("do_sample", None)
+    do_sample = eval(model_inputs.get("do_sample", None))
+    return_dict_in_generate = eval(model_inputs.get("return_dict_in_generate", None))
     if prompt == None or max_new_tokens == None or temperature == None or top_k == None or top_p == None or do_sample == None:
         return {'message': "Insufficient arguments"}
     
@@ -31,7 +32,7 @@ def inference(model_inputs:dict) -> dict:
     inputs = tokenizer(prompt, return_tensors='pt').to(model.device)
     input_length = inputs.input_ids.shape[1]
     outputs = model.generate(
-        **inputs, max_new_tokens=max_new_tokens, do_sample=do_sample, temperature=temperature, top_p=top_p, top_k=top_k, return_dict_in_generate=True,
+        **inputs, max_new_tokens=max_new_tokens, do_sample=do_sample, temperature=temperature, top_p=top_p, top_k=top_k, return_dict_in_generate=return_dict_in_generate,
     )
     token = outputs.sequences[0, input_length:]
     output_str = tokenizer.decode(token)
